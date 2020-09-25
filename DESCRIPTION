@@ -1,0 +1,16 @@
+Package: compROC
+Type: Package
+Title: A new powerful test to compare correlated ROC curves
+Version: 1.0.0
+Authors@R: c(
+    person("Yuting", "Lu", email = "yl4036@nyu.edu", role = c("aut","cre")),
+    person("Yongzhao", "Shao", email = "yongzhao.shao@nyulangone.org", role = "aut"))
+Author: Yuting Lu[aut, cre], Yongzhao Shao[aut]
+Maintainer: Yuting Lu <yl4036@nyu.edu>
+Description: A new powerful test is proposed to compare AUCs under two correlated ROC curves based on an unbiased variance estimator derived from U statistic theory. The variance, confidence interval of a single ROC curve, the covariance of two ROC curves, and the confidence interval of the AUC difference can also be computed within this package. In addition, our package includes a function to generate correlated risk scores in case-control setting. 
+Depends: R(>= 3.5.0)
+Imports: stats, VineCopula
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
