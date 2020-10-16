@@ -36,7 +36,7 @@ ci_AUC(roc1,level=0.95)
 ci_AUC(roc2,level=0.9)
 }
 \references{
-Lu, Y. and Shao, Y. (2020)
+Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 }
 \seealso{
 \code{\link{ROC}}, \code{\link{uvar}}

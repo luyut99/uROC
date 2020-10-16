@@ -1,7 +1,7 @@
-#' Hypothesis test for comparing AUCs of two correlated ROC curves
+#' Hypothesis test for comparing AUCs of two correlated ROC curves using unbiased variance estimator
 #'
 #' Test whether the AUCs of two correlated ROC curves are different.
-#' @usage compROC(ROC1,ROC2,alternative=c("two.sided","less","greater"),
+#' @usage ucompROC(ROC1,ROC2,alternative=c("two.sided","less","greater"),
 #' var_diff=FALSE,ci=FALSE,...)
 #' @param ROC1,ROC2 Two \code{ROC} objects referring two ROC curves.
 #' @param alternative Character. Indicate the alternative hypothesis. Must be one of 'two.sided', 'less' or 'greater'.
@@ -29,7 +29,7 @@
 #'   the unbiased variance estimator if ci_diff=TRUE}
 #' }
 #'
-#' @references Lu, Y. and Shao, Y. (2020). Preprint
+#' @references Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 #' @seealso \code{\link{ROC}}, \code{\link{uvar}}, \code{\link{ucov}}, \code{\link{ci_diff}}
 #' @section Warning:
 #' If \eqn{AUC_1 = AUC_2}, variance of AUC difference may be 0 and misleading. But this test is still valid.
@@ -43,7 +43,7 @@
 #' ## New test using unbiased variance estimator, result in p-value<0.05
 #' uroc1=ROC(Data[,3],Data[,1],case_score_ind = "higher")
 #' uroc2=ROC(Data[,3],Data[,2],case_score_ind = "higher")
-#' Utest=compROC(uroc1,uroc2,alternative = "two.sided",var_diff = TRUE)
+#' Utest=ucompROC(uroc1,uroc2,alternative = "two.sided",var_diff = TRUE)
 #' Utest
 #'
 #' ## DeLong test, result in p-value>0.05
@@ -61,7 +61,7 @@
 #' var(droc1)+var(droc2)-2*cov(droc1,droc2)}
 #' @export
 
-compROC<-function(ROC1,ROC2,alternative=c("two.sided","less","greater"),
+ucompROC<-function(ROC1,ROC2,alternative=c("two.sided","less","greater"),
                    var_diff=FALSE,ci=FALSE,...) { #paired=NULL,
   if (missing(alternative) | is.null(alternative)) {
     alternative='two.sided' # Default is two.sided

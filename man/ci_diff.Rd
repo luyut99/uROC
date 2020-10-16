@@ -10,7 +10,7 @@ ci_diff(ROC1,ROC2,type=c("two.sided","less","greater"),level=NULL)
 \item{ROC1, ROC2}{Two \code{ROC} objects referring two ROC curves.}
 
 \item{type}{Character. Type of the confidence interval. Must be one of 'two.sided', 'less', 'greater'. 'less',
-'greater' refer to one-sided confidence interval with corresponding alternatives. The first letter is
+'greater' refer to one-sided confidence interval corresponding to the alternatives. The first letter is
 sufficient.}
 
 \item{level}{A numeric scalar in (0, 1). Indicating the level of confidence interval. Default is 0.95.}
@@ -41,8 +41,8 @@ ci_diff(uroc1,uroc2,type = "two.sided")
 ci_diff(uroc1,uroc2,type="less",level=0.95)
 }
 \references{
-Lu, Y. and Shao, Y. (2020)
+Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 }
 \seealso{
-\code{\link{compROC}}
+\code{\link{ucompROC}}
 }

@@ -4,7 +4,7 @@
 #' @usage uvar(ROC)
 #' @param ROC An \code{ROC} object obtained by ROC.
 #' @return A numeric value.
-#' @references Lu, Y. and Shao, Y. (2020). Preprint
+#' @references Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 #' @section Warning:
 #' Variance of AUC=1 is always 0 and can be misleading.
 #' @examples

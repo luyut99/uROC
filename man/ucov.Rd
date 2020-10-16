@@ -31,5 +31,5 @@ roc2=ROC(Data[,3],Data[,2],case_score_ind = "higher",ci=TRUE,level=0.95)
 ucov(roc1,roc2)
 }
 \references{
-Lu, Y. and Shao, Y. (2020). Preprint
+Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 }

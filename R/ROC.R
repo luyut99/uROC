@@ -2,7 +2,7 @@
 #'
 #' It builds a ROC curve given the predictor and binary response and saves it to a list including sensitivity,
 #' specificity, auc, etc. Unbiased variance of auc and confidence interval can be selected to output.
-#' The result can then be passed to compROC for testing two correlated ROC curves.
+#' The result can then be passed to ucompROC for testing two correlated ROC curves.
 #' @usage ROC(response,predictor,case_score_ind,uvar=FALSE,ci=FALSE,level=NULL)
 #' @param response A factor, numeric or character vector of binary responses encoded with 0(controls) and 1(cases).
 #' @param predictor A numeric or ordered vector of the same length as response, containing the predicted value of each observation.
@@ -31,7 +31,7 @@
 #' @references Hanley, J. A., & McNeil, B. J. (1982). The meaning and use of the area under a receiver operating
 #' characteristic (ROC) curve. \emph{Radiology}, 143(1), 29-36.
 #' @references Metz, C. E. (1978). Basic principles of ROC analysis. \emph{Seminars in nuclear medicine}. 8(4), 283-298.
-#' @references Lu, Y. Shao, Y. (2020). Preprint
+#' @references Lu, Y. Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 #' @seealso \code{\link{uvar}}, \code{\link{ci_AUC}}
 #' @examples
 #' set.seed(123)
@@ -58,7 +58,7 @@ ROC<-function(response,predictor,case_score_ind=c("higher","lower"),uvar=FALSE,c
   cont=predictor[response==0]
 
   rg=range(predictor)
-  cutoff=seq(rg[1],rg[2],length.out = 100) # Cutoff. Split the range using 100 points with equal distance
+  cutoff=seq(rg[1],rg[2],by = 0.01) # Cutoff. Split the range by 0.1
 
   if (case_score_ind=="higher") {
     TP=sapply(cutoff,function(x) sum(case>=x)) # True positive
@@ -72,6 +72,11 @@ ROC<-function(response,predictor,case_score_ind=c("higher","lower"),uvar=FALSE,c
 
   sen=TP/length(case) # Sensitivity
   spe=TN/length(cont) # Specificity
+
+  senspe=cbind(sen,spe)
+  senspe=senspe[!duplicated(senspe),]
+  sen=senspe[,1]
+  spe=senspe[,2]
 
   K = outer(case,cont,kern_func)
   AUC = mean(K)

@@ -23,12 +23,12 @@ Wieand S, Gail MH, James BR, and James KL. A family of nonparametric statistics 
 #' diagnostic markers with paired or unpaired data. Biometrika 76(3):585-92. 1989.(\href{https://www.jstor.org/stable/2336123}{https://www.jstor.org/stable/2336123})
 }
 \examples{
-library(compROC)
+library(ucompROC)
 data(pcd)
 ## Calculate ROC and AUC for each biomarker
 roc1=ROC(pcd$d,pcd$y1,case_score_ind="higher",uvar=TRUE)
 roc2=ROC(pcd$d,pcd$y2,case_score_ind="higher",uvar=TRUE)
 ## Compare the two biomarkers by hypothesis testing
-compROC(roc1,roc2,alternative="two.sided",var_diff=TRUE,ci=TRUE)
+ucompROC(roc1,roc2,alternative="two.sided",var_diff=TRUE,ci=TRUE)
 }
 \keyword{datasets}

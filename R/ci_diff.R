@@ -4,12 +4,12 @@
 #' @usage ci_diff(ROC1,ROC2,type=c("two.sided","less","greater"),level=NULL)
 #' @param ROC1,ROC2 Two \code{ROC} objects referring two ROC curves.
 #' @param type Character. Type of the confidence interval. Must be one of 'two.sided', 'less', 'greater'. 'less',
-#' 'greater' refer to one-sided confidence interval with corresponding alternatives. The first letter is
+#' 'greater' refer to one-sided confidence interval corresponding to the alternatives. The first letter is
 #' sufficient.
 #' @param level A numeric scalar in (0, 1). Indicating the level of confidence interval. Default is 0.95.
 #' @return A vector of length 2 including the lower bound and upper bound of the confidence interval.
-#' @references Lu, Y. and Shao, Y. (2020)
-#' @seealso \code{\link{compROC}}
+#' @references Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
+#' @seealso \code{\link{ucompROC}}
 #' @section Warning:
 #' When \eqn{AUC_1=AUC_2}, the variance of the AUC difference may be 0, so the confidence interval should always
 #' have width 0 and can be misleading.

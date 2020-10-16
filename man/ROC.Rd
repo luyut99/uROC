@@ -36,7 +36,7 @@ A list of class "\code{ROC}" including the following components:
 \description{
 It builds a ROC curve given the predictor and binary response and saves it to a list including sensitivity,
 specificity, auc, etc. Unbiased variance of auc and confidence interval can be selected to output.
-The result can then be passed to compROC for testing two correlated ROC curves.
+The result can then be passed to ucompROC for testing two correlated ROC curves.
 }
 \details{
 Sensitivity and specificity are calculated by
@@ -64,7 +64,7 @@ characteristic (ROC) curve. \emph{Radiology}, 143(1), 29-36.
 
 Metz, C. E. (1978). Basic principles of ROC analysis. \emph{Seminars in nuclear medicine}. 8(4), 283-298.
 
-Lu, Y. Shao, Y. (2020). Preprint
+Lu, Y. Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 }
 \seealso{
 \code{\link{uvar}}, \code{\link{ci_AUC}}

@@ -32,5 +32,5 @@ uvar(roc1)
 uvar(roc2)
 }
 \references{
-Lu, Y. and Shao, Y. (2020). Preprint
+Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 }

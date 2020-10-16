@@ -6,7 +6,7 @@
 #' @param ROC An \code{ROC} object obtained by ROC.
 #' @param level A numeric scalar in (0, 1). Indicating the level of confidence interval. Default is 0.95.
 #' @return A vector of length 2 including the lower bound and upper bound of the confidence interval.
-#' @references Lu, Y. and Shao, Y. (2020)
+#' @references Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 #' @seealso \code{\link{ROC}}, \code{\link{uvar}}
 #' @section Warning:
 #' Confidence interval for AUC=1 has width 0 and can be misleading.

@@ -4,7 +4,7 @@
 #' @usage ucov(ROC1, ROC2)
 #' @param ROC1,ROC2 Two \code{ROC} objects referring two ROC curves.
 #' @return A numeric value.
-#' @references Lu, Y. and Shao, Y. (2020). Preprint
+#' @references Lu, Y. and Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 #' @section Warning:
 #' Covariance of two AUCs with any AUC=1 is always 0 and can be misleading.
 #' @examples
