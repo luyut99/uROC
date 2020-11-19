@@ -1,4 +1,4 @@
-Package: ucompROC
+Package: uROC
 Type: Package
 Title: A new powerful test to compare correlated ROC curves
 Version: 1.0.0
