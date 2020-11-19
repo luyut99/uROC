@@ -29,6 +29,7 @@ have width 0 and can be misleading.
 
 \examples{
 library(uROC)
+
 set.seed(321)
 ## Generate data
 Data=SimuCaseCont(30,30,0.9,0.9,0.87,0.90,"c","t",marg1="Normal",marg2="Normal")

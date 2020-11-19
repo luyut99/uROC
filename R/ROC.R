@@ -35,6 +35,7 @@
 #' @seealso \code{\link{uvar}}, \code{\link{ci_AUC}}
 #' @examples
 #' library(uROC)
+#'
 #' set.seed(123)
 #' ## Generate data: m=n=100, tau1=0.8, tau0=0.9, AUC_1=AUC_2=0.9, Clayton copula in cases,
 #' ## t copula in controls, both margins are normal

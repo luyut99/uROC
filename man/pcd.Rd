@@ -24,6 +24,7 @@ Wieand S, Gail MH, James BR, and James KL. A family of nonparametric statistics 
 }
 \examples{
 library(uROC)
+
 data(pcd)
 ## Calculate ROC and AUC for each biomarker
 roc1=ROC(pcd$d,pcd$y1,case_score_ind="higher",uvar=TRUE)
