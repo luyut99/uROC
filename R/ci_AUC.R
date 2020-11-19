@@ -11,6 +11,7 @@
 #' @section Warning:
 #' Confidence interval for AUC=1 has width 0 and can be misleading.
 #' @examples
+#' library(uROC)
 #' set.seed(123)
 #' ## Generate data
 #' Data=SimuCaseCont(100,100,0.8,0.9,0.9,0.9,"c","t",marg1="Normal",marg2="Normal")

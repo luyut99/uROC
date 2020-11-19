@@ -50,6 +50,7 @@ If \eqn{AUC_1 = AUC_2}, variance of AUC difference may be 0 and misleading. But 
 }
 
 \examples{
+library(uROC)
 set.seed(321)
 ## Generate data
 ## m=n=30, tau1=0.9, tau0=0.9, AUC_1=0.87, AUC_2=0.90, Clayton and t copula for cases and controls

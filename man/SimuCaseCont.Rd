@@ -29,6 +29,7 @@ and 2, accordingly, and the last column is the binary response.
 Generate two correlated risk score with given AUCs and correlations under case-control setting using copula theory.
 }
 \examples{
+library(uROC)
 set.seed(123)
 ## Generate data: m=n=100, tau1=0.8, tau0=0.9, AUC_1=AUC_2=0.9, Clayton copula in cases,
 ## t copula in controls, both normal margins for score 1 and 2
