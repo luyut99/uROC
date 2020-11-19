@@ -34,6 +34,7 @@
 #' @references Lu, Y. Shao, Y. (2020). ucompROC: A new powerful test to compare correlated ROC curves.
 #' @seealso \code{\link{uvar}}, \code{\link{ci_AUC}}
 #' @examples
+#' library(uROC)
 #' set.seed(123)
 #' ## Generate data: m=n=100, tau1=0.8, tau0=0.9, AUC_1=AUC_2=0.9, Clayton copula in cases,
 #' ## t copula in controls, both margins are normal
@@ -57,26 +58,18 @@ ROC<-function(response,predictor,case_score_ind=c("higher","lower"),uvar=FALSE,c
   case=predictor[response==1]
   cont=predictor[response==0]
 
-  rg=range(predictor)
-  cutoff=seq(rg[1],rg[2],by = 0.01) # Cutoff. Split the range by 0.1
-
   if (case_score_ind=="higher") {
-    TP=sapply(cutoff,function(x) sum(case>=x)) # True positive
-    TN=sapply(cutoff,function(x) sum(cont<x)) # True negative
+    response_sort=response[order(predictor,decreasing = T)]
     kern_func = function(a,b) (sign(a-b)+1)/2 # AUC kernel function
   } else {
-    TP=sapply(cutoff,function(x) sum(case<=x)) # True positive
-    TN=sapply(cutoff,function(x) sum(cont>x)) # True negative
+    response_sort=response[order(predictor,decreasing = F)]
     kern_func = function(a,b) (sign(b-a)+1)/2 # AUC kernel function
   }
 
-  sen=TP/length(case) # Sensitivity
-  spe=TN/length(cont) # Specificity
-
-  senspe=cbind(sen,spe)
-  senspe=senspe[!duplicated(senspe),]
-  sen=senspe[,1]
-  spe=senspe[,2]
+  sen=cumsum(response_sort==1)/length(case) # Sensitivity
+  spe=1-cumsum(response_sort==0)/length(cont) # Specificity
+  # TP=cumsum(response_sort==1) # True positive
+  # TN=length(cont)-cumsum(response_sort==0) # True negative
 
   K = outer(case,cont,kern_func)
   AUC = mean(K)
